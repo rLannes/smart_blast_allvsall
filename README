@@ -1,0 +1,13 @@
+software on GPL3 licence author
+Lannes Romain 2017 Paris
+
+This script is usefull to make blast all against all, which are at posterior filter by coverge as it reduce
+ considerably the number of alignment to do. Simply by doing only the necessary alignment. We tested it on 40 000
+ sequences it show a speed up almost 4x. We strongly believe that this speed up may increase with the size of the
+ dataset.
+
+for simple command line information you can use python3 blast_AvA_optimised.py -h
+
+
+
+# TODO Some Documentation
