@@ -1,13 +1,28 @@
-software on GPL3 licence author
-Lannes Romain 2017 Paris
+licence: software on GPL3
+author: Lannes Romain 2017 Paris
 
-This script is usefull to make blast all against all, which are at posterior filter by coverge as it reduce
- considerably the number of alignment to do. Simply by doing only the necessary alignment. We tested it on 40 000
- sequences it show a speed up almost 4x. We strongly believe that this speed up may increase with the size of the
- dataset.
+This script is usefull to make blast all against all, which are at posterior filter by coverage as it reduce
+considerably the number of alignment to do. 
+ 
+Simply by doing only the necessary alignment. We tested it on 40 000
+sequences it show a speed up almost 4x. We strongly believe that this speed up may increase with the size of the
+dataset.
 
 for simple command line information you can use python3 blast_AvA_optimised.py -h
 
+this script can use multi process (multiple cpu) but is not yet mpi which is something that I have in mind to do.
+It is really simple to use:
+you first need to create a working directory.
+then you can launch it using:
+python3 blast_AvA_optimised.py -wd <working_dir> -input <input file format fasta> -th <number of cpu to use> -output <output_name>
 
+By default it use a coverage threshold of 80%-80% (reciprocal): you can change it with the -cov option
+
+by default it assume that blastp and makeblasdb are in your path you can set the binary path with -blastp and -makeblastdb options
+
+by default the output is outfmt 6 qseqid sseqid evalue pident bitscore qstart qend sstart send qlen slen
+which you can change with the option -blast_header
+
+#TODO I also plan to add option to make it possible to use on nucleotide sequence.
 
 # TODO Some Documentation
